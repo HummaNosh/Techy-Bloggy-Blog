@@ -1,0 +1,138 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Techy Tech TECH</title>
+    <link rel="stylesheet" href="./css/jass.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  
+      <nav class=" navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle float-left"
+              data-toggle="collapse"
+              data-target="#myNavbar"
+            >
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"></a>
+          </div>
+          
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#mainPage">HOME</a></li>
+              <li><a href="#projects">LOG IN</a></li>
+              <li><a href="#more">DASHBOARD</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown"
+                  >MY PROFILE <span class="caret"></span
+                ></a>
+                <ul class="dropdown-menu">
+                    <li><a data-toggle="modal" data-target="#mob" >About Me</a></li>
+                  <li><a data-toggle="modal" data-target="#Linked" >Linkedin</a></li>
+                  <li><a data-toggle="modal" data-target="#Git" >GitHub</a></li>
+                  <li><a data-toggle="modal" data-target="#mail">Email</a></li>
+                  <li><a data-toggle="modal" data-target="#mob" >Mobile</a></li>
+
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="flex-column justify-space-around">
+        <header>
+          <h1>
+            &#127881 My Techy Tech TECH Blog &#127881
+          </h1>
+        </header>
+        <main class="container container-fluid mt-5">
+          {{{ body }}}
+
+          <div class="menu-container">
+            <div class="card-header col-md-12 text-center">
+              <h2>
+                The Tech Talk Space
+              </h2>
+            </div>
+            {{#each dishes as |dish|}}
+            <div class="dish col-md-4">
+              <p>
+                {{dish.id}}.
+                {{dish.dish_name}}
+              </p>
+            </div>
+            <div class="col-md-5">
+              <p>
+                Guest:
+                {{dish.guest_name}}
+              </p>
+            </div>
+            <div class="col-md-3">
+              🥜: {{#if dish.has_nuts}} Contains nuts {{else}} No nuts {{/if}}
+            </div>
+            {{/each}}
+            <!-- This is the form for adding a new dish -->
+            <div class="add-dish-container">
+              <h2>
+                RSVP with the dish you plan to bring!
+              </h2>
+              <form class="new-dish-form">
+                <label for="dish_name">
+                  Dish Name:
+                </label>
+                <br />
+                <textarea id="dish_name" name="dish_name" rows="2" cols="30">
+                {{dish_name}}
+              </textarea>
+                <br />
+                <label for="description">
+                  Description:
+                </label>
+                <br />
+                <textarea id="description" name="description" rows="5" cols="30">
+                {{description}}
+              </textarea>
+                <br />
+                <label for="guest_name">
+                  Guest Name:
+                </label>
+                <br />
+                <textarea id="guest_name" name="guest_name" rows="2" cols="30">
+                {{guest_name}}
+              </textarea>
+                <br />
+                <br />
+                {{#if has_nuts}}
+                <input type="checkbox" id="has_nuts" name="has_nuts" checked />
+                {{else}}
+                <input type="checkbox" id="has_nuts" name="has_nuts" />
+                {{/if}}
+                <label for="has_nuts">
+                  Check box if this dish contains nuts
+                </label>
+                <br />
+                <button type="submit" value="Submit">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+          
+          <script src="/js/add-dish.js"></script>
+          
+        </main>
+    </div>
+    </body>
+  
+  </html>
