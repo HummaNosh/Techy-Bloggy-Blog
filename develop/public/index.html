@@ -50,12 +50,13 @@
           </div>
         </div>
       </nav>
-      <div class="flex-column justify-space-around">
+    
         <header>
-          <h1>
-            &#127881 My Techy Tech TECH Blog &#127881
-          </h1>
+       <img id ="eye" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyeGCl88mSjlMXspn9n_QvsAAGMBUHBPyANw&usqp=CAU" alt = "An image of a technical eye"/>
         </header>
+        <h1>
+           Your Techy Tech TECH Blog 
+        </h1>
         <main class="container container-fluid mt-5">
           {{{ body }}}
 
@@ -64,7 +65,56 @@
               <h2>
                 The Tech Talk Space
               </h2>
-            </div>
+              </div>
+              </div>
+           </div>
+</div>
+<!-- blog cards -->
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <img class="card-img-top" src="https://tse1.mm.bing.net/th?id=OIP.tAh4IvhbxtzpJUCMwC-djQHaGe&pid=Api&P=0&w=201&h=175" alt="Card image">
+      <div class="card-body">
+        <h5 class="card-title">Some new devs on the block</h5>
+        <p class="card-text">New coders trying to break the system..</p>
+        <a href="#" class="btn btn-primary">See Blog</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <img class="card-img-top" src="https://tse1.mm.bing.net/th?id=OIP.tAh4IvhbxtzpJUCMwC-djQHaGe&pid=Api&P=0&w=201&h=175" alt="Card image">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">New coders trying to break the system..</p>
+        <a href="#" class="btn btn-primary">See Blog</a>
+      </div>
+    </div>
+    
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <img class="card-img-top" src="https://tse1.mm.bing.net/th?id=OIP.tAh4IvhbxtzpJUCMwC-djQHaGe&pid=Api&P=0&w=201&h=175" alt="Card image">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">New coders trying to break the system..</p>
+        <a href="#" class="btn btn-primary">See Blog</a>
+      </div>
+    </div>
+    
+</div>
+<div class="col-sm-6">
+  <div class="card">
+    <img class="card-img-top" src="https://tse1.mm.bing.net/th?id=OIP.tAh4IvhbxtzpJUCMwC-djQHaGe&pid=Api&P=0&w=201&h=175" alt="Card image">
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">New coders trying to break the system..</p>
+      <a href="#" class="btn btn-primary">See Blog</a>
+    </div>
+  </div>
+<!-- ------------------------------------------------------------------------------------------------------ -->
+
+            <!-- ------------------------------------------ -->
             {{#each dishes as |dish|}}
             <div class="dish col-md-4">
               <p>
@@ -83,7 +133,7 @@
             </div>
             {{/each}}
 
-            <div class="add-dish-container">
+            <div class="col-md-12 add-dish-container">
                 {{#if loggedIn}}
                 <!-- LOGIN HANDLEBAR -->
                 <div class="row justify-space-between-md">
