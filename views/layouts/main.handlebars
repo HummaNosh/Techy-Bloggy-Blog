@@ -1,0 +1,72 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Techy Tech TECH</title>
+    <link rel="stylesheet" href="css/jass.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  
+      <nav class=" navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle float-left"
+              data-toggle="collapse"
+              data-target="#myNavbar"
+            >
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"></a>
+          </div>
+          
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/">HOME</a></li>
+              <li><a data-toggle= "modal" data-target="#LoginNow">LOG IN</a></li>
+             {{!-- when you login 'create new blog should pop up --}}
+                <li><a href="#CREATENEW">CREATE A NEW BLOG!</a></li>
+              <li><a href="#more">DASHBOARD</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown"
+                  >MY PROFILE <span class="caret"></span
+                ></a>
+                <ul class="dropdown-menu">
+                    <li><a data-toggle="modal" data-target="#mob" >About Me</a></li>
+                  <li><a data-toggle="modal" data-target="#Linked" >Linkedin</a></li>
+                  <li><a data-toggle="modal" data-target="#Git" >GitHub</a></li>
+                  <li><a data-toggle="modal" data-target="#mail">Email</a></li>
+                  <li><a data-toggle="modal" data-target="#mob" >Mobile</a></li>
+
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+        <header>
+       <img id ="eye" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyeGCl88mSjlMXspn9n_QvsAAGMBUHBPyANw&usqp=CAU" alt = "An image of a technical eye"/>
+        </header>
+        <h1>
+           Your Techy Tech TECH Blog 
+        </h1>
+        <main class="container container-fluid mt-5">
+          {{{ body }}}
+
+      </main>
+      </body>   
+      <br>
+      <br>
+      <br>
+      
+<footer> Made by HUMMA </footer>
+  </html>
