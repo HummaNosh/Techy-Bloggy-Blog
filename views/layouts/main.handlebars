@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Techy Tech TECH</title>
@@ -30,12 +32,18 @@
           
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/">HOME</a></li>
-              <li><a data-toggle= "modal" data-target="#LoginNow">LOG IN</a></li>
+              <li><a href="/dashboard">HOME</a></li>
+              <li><a href="/dashboard">DASHBOARD</a></li>
              {{!-- when you login 'create new blog should pop up --}}
-                <li><a href="#CREATENEW">CREATE A NEW BLOG!</a></li>
-              <li><a href="#more">DASHBOARD</a></li>
-              <li class="dropdown">
+              {{#if logged_in}}
+         <li><a href="/profile">MY PROFILE</a></li>
+        <li><a href="/createBlog">CREATE A NEW BLOG!</a></li> 
+        <li id="logout"><a href="">LOGOUT </a></li> 
+        {{else}}
+    <li><a href="/login">LOG IN</a></li>
+        {{/if}}
+              
+              {{!-- <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown"
                   >MY PROFILE <span class="caret"></span
                 ></a>
@@ -46,7 +54,7 @@
                   <li><a data-toggle="modal" data-target="#mail">Email</a></li>
                   <li><a data-toggle="modal" data-target="#mob" >Mobile</a></li>
 
-                </ul>
+                </ul> --}}
               </li>
             </ul>
           </div>
