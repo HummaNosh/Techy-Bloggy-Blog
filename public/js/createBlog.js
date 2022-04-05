@@ -1,9 +1,9 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
   
-    const name = document.querySelector('#project-name').value.trim();
-    const needed_funding = document.querySelector('#project-funding').value.trim();
-    const description = document.querySelector('#project-desc').value.trim();
+    const name = document.querySelector('#project-name').value;
+    const needed_funding = document.querySelector('#project-funding').value;
+    const description = document.querySelector('#project-desc').value;
   
     if (name && needed_funding && description) {
       const response = await fetch(`/api/projects`, {
@@ -43,4 +43,3 @@ const newFormHandler = async (event) => {
     .addEventListener('submit', newFormHandler);
   
   document.querySelector('.project-list').addEventListener('click', delButtonHandler);
-  

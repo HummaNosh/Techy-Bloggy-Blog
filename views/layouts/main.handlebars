@@ -34,11 +34,12 @@
             <ul class="nav navbar-nav navbar-right">
               <li><a href="/dashboard">HOME</a></li>
               <li><a href="/dashboard">DASHBOARD</a></li>
+              
              {{!-- when you login 'create new blog should pop up --}}
               {{#if logged_in}}
          <li><a href="/profile">MY PROFILE</a></li>
         <li><a href="/createBlog">CREATE A NEW BLOG!</a></li> 
-        <li id="logout"><a href="">LOGOUT </a></li> 
+        <li><a href="" id="logout">LOGOUT </a></li> 
         {{else}}
     <li><a href="/login">LOG IN</a></li>
         {{/if}}
@@ -77,4 +78,5 @@
       <br>
       
 <footer> Made by HUMMA </footer>
+<script src="js/logout.js"></script>
   </html>
