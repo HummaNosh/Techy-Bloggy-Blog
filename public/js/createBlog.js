@@ -7,18 +7,22 @@ const newPostFormHandler = async (event) => {
   const content = document.getElementById('new-Post-Content').value.trim();
 
   if (title && content) {
+    console.log("poo")
     const response = await fetch(`/api/New/`, {
+      
       method: 'POST',
       body: JSON.stringify({ title, content }),
       headers: { 
         "Content-Type": "application/json",
+        
      },
     });
-
+    console.log(response)
     if (response.ok) {
+      console.log("wee")
       document.location.replace('/dashboard');
     } else {
-      alert(response.statusText);
+      alert("borked");
     }
   }
 };
