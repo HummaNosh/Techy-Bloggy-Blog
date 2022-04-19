@@ -1,0 +1,20 @@
+<div class='container-fluid'>
+    <h3 class='posts'>Blogs</h3>
+    {{#if posts.length}}
+        {{#each posts as |New|}}
+            <section class='post-list'>
+                <div class='col-12'>
+                    <div class='card-deck'>
+                        <div class='card my-4 rounded' data-id='{{New.id}}'><a href='/New/{{New.id}}'>
+                            <div class='card-header text-light bg-dark'>
+                                <h3>{{New.title}}</h3>
+                                <small class='text-right'>Posted by {{user.username}} on {{format_date New.created_at}}</small>
+                            </div>
+                            <div class='card-body d-inline-block text-truncate' style='max-width: 100%' id='content' >{{New.content}}</div></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {{/each}}
+    {{/if}}
+</div>

@@ -7,10 +7,12 @@ const newPostFormHandler = async (event) => {
   const content = document.getElementById('new-Post-Content').value.trim();
 
   if (title && content) {
-    const response = await fetch('/api/New/', {
+    const response = await fetch(`/api/New/`, {
       method: 'POST',
       body: JSON.stringify({ title, content }),
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+     },
     });
 
     if (response.ok) {
