@@ -1,10 +1,10 @@
 
 
-const newArticleFormHandler = async (event) => {
+const newPostFormHandler = async (event) => {
   event.preventDefault();
   
-  const title = document.getElementById('new-Article-Title').value.trim();
-  const content = document.getElementById('new-Article-Content').value.trim();
+  const title = document.getElementById('new-Post-Title').value.trim();
+  const content = document.getElementById('new-Post-Content').value.trim();
 
   if (title && content) {
     const response = await fetch('/api/New/', {
@@ -27,10 +27,10 @@ const cancelButtonHandler = async () => {
 }
 
 document
-  .querySelector('.newArticleForm')
-  .addEventListener('submit', newArticleFormHandler);
+  .querySelector('.newPostForm')
+  .addEventListener('submit', newPostFormHandler);
 
 
   document
-  .querySelector('.newArticleForm')
+  .querySelector('.newPostForm')
   .addEventListener('reset', cancelButtonHandler);
