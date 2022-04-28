@@ -87,7 +87,10 @@ nav a:hover {
   color: var(--secondary);
   background-color: var(--dark);
 }
-
+h1{
+  justify-content: center;
+    display: flex;
+}
 .gallery {
   flex: 4;
   background-color: #fff;

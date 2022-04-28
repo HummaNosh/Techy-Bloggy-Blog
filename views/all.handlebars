@@ -50,29 +50,37 @@
       <a href="/" class="btn btn-primary">See Blog</a>
     </div>
   </div>
+  {{!-- dashbord --}}
+         <div class='container-fluid'>
+            <section>
+                <div class='d-flex flex-row-reverse col-12'>
+                    <button class='btn btn-secondary' id='btn-add'>+ Add New</button>
+                </div>
+            </section>
+            
+            <section class='New-list'>
+                <div class='col-12'>
+                        <h3 class='my-News'>My sutff</h3>
+<div>stuff goes here
+                    {{#if posts.length}}
+                        {{#each posts as |post|}}
+                       
+                  <a href='/New/{{post.id}}'></a>
+                                <div scope='row'>{{post.title}}</div>
+                                <div id='content' class='word-break: break-word;'>{{post.content}}</div>
+                                <div id='created-at'>{{format_date post.created_at}}</div>
+                                <div id='updated_at'>{{format_date post.updated_at}}</div>
+                                <div class='edit-btns'>
+                                    <button class='btn btn-primary btn-update' data-id='{{post.id}}'>Update</button>
+                                    <button class='btn btn-warning btn-delete' data-id='{{post.id}}'>Delete</button>
+                                </div>
+             
+                        {{/each}}
+                    {{/if}}
+                </div>
+                </div>
+            </section>
+        </div>
 
 
-  <!-- Loop over each object in the Projects array -->
-{{#each Projects as |Project| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/project/{{Project.id}}">{{Project.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount Project.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{Project.user.name}} on {{format_date Project.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{Project.description}}
-    </p>
-  </div>
-</div>
-{{/each}}
+<script src='./js/dashboard.js'></script> 
