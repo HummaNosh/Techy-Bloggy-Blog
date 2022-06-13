@@ -1,12 +1,19 @@
 const router = require('express').Router();
-const User = require('../../models/User');
+const { User } = require('../../models');
+
 
 router.post('/', async (req, res) => {
   try {
-    const userData = await User.create(req.body);
-console.log("poo")
+    console.log(req.body)
+    const userData = await User.create({
+      username: req.body.name,
+      email: req.body.email,
+      password:req.body.password,
+    });
+
     req.session.save(() => {
       req.session.user_id = userData.id;
+      req.session.email = userData.email;
       req.session.logged_in = true;
 
       res.status(200).json(userData);
@@ -16,6 +23,7 @@ console.log("poo")
   }
 });
 
+
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -23,7 +31,7 @@ router.post('/login', async (req, res) => {
     if (!userData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Woops! Incorrect email or password!' });
       return;
     }
 
@@ -32,7 +40,7 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Woops! Incorrect email or password!' });
       return;
     }
 
@@ -40,18 +48,21 @@ router.post('/login', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
       
-      res.json({ user: userData, message: 'You are now logged in!' });
+      res.json({ user: userData, message: 'Wahoo! You are now logged in!' });
     });
 
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
 
+
 router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.user_id) {
     req.session.destroy(() => {
       res.status(204).end();
+      console.log("logged out")
     });
   } else {
     res.status(404).end();

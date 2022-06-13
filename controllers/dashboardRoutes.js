@@ -1,27 +1,66 @@
-const router = require('express').Router();
-const { New, User} = require('../models');
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const req = require("express/lib/request");
+const { User, BlogPost  } = require("../models");
+const withAuth = require("../utils/auth");
 
-router.get('/', withAuth, async (req, res) => {
+
+router.get("/", withAuth, async (req, res) => {
   try {
-    const NewData = await New.findAll({
-      include: {
-        model: User,
-        attributes: ['username'],
-      },
-      where: {
-        user_id: req.session.user_id,
-      },
+    const userData = await BlogPost .findAll({
+      include: [User],
+      where: { user_id: req.session.user_id },
     });
 
-    const NewStuff= NewData.map((New) => New.get({ plain: true }));
+    const posts = userData.map((post) => post.get({ plain: true }));
 
-    res.render('dashboard', {
+    res.render("dashboard", {
       posts,
-      logged_in: req.session.logged_in,
+      logged_in: true,
     });
   } catch (err) {
-    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get("/posts/:id", withAuth, async (req, res) => {
+  try {
+    const postData = await BlogPost.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+        },
+      ],
+    });
+
+    const posts = postData.get({ plain: true });
+
+    res.render("editanddelete", {
+      ...posts,
+      user_id: req.session.user_id,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/edit/:id", withAuth, async (req, res) => {
+  try {
+    const postData = await BlogPost.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+        },
+      ],
+    });
+
+    const posts = postData.get({ plain: true });
+
+    res.render("edit", {
+      ...posts,
+      user_id: req.session.user_id,
+    });
+  } catch (err) {
     res.status(500).json(err);
   }
 });
@@ -33,26 +72,5 @@ router.get('/createBlog', withAuth, async (req, res) => {
   res.redirect('/login');
   }
 });
-
-// router.get('/updateBlog/:id', withAuth, async (req, res) => {  
-//   try {
-//     const NewData = await New.findOne({
-//       where: {
-//         id: req.params.id,
-//         user_id: req.session.user_id,
-//       },
-//     });
-
-//     const article = NewData.get({ plain: true });
-
-//     res.render('updateBlog', {
-//       article,
-//       logged_in: req.session.logged_in,
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
 
 module.exports = router;
