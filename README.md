@@ -49,3 +49,4 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 ## Screenshots of the App
 
+![image](https://user-images.githubusercontent.com/93604239/173464776-66a4e9f3-b745-4ab7-bb44-4205da983480.png)
