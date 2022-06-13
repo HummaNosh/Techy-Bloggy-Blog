@@ -49,4 +49,14 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 ## Screenshots of the App
 
+#### Homepage
+![image](https://user-images.githubusercontent.com/93604239/173464885-af5308c3-14c9-4a29-a503-cb46056c3055.png)
+#### Dashboard
+![image](https://user-images.githubusercontent.com/93604239/173464835-65e6dd6b-44f4-46e2-b107-7bb053304d04.png)
+#### Create a Blog
 ![image](https://user-images.githubusercontent.com/93604239/173464776-66a4e9f3-b745-4ab7-bb44-4205da983480.png)
+#### Edit/Delete Blog
+![image](https://user-images.githubusercontent.com/93604239/173464998-8c93e955-cb29-4d42-bb63-7d9fc3088c83.png)
+#### Comments
+![image](https://user-images.githubusercontent.com/93604239/173465062-a36c8d5f-bdad-4158-a827-933a3624fc95.png)
+
