@@ -1,58 +1,32 @@
-{{!-- <h3>something</h3>
-<div class='container-fluid'>
-    <h3 class='posts'>Blogs</h3>
-    {{#if posts.length}}
-        {{#each posts as |New|}}
-            <section class='post-list'>
-                <div class='col-12'>
-                    <div class='card-deck'>
-                        <div class='card my-4 rounded' data-id='{{New.id}}'><a href='/New/{{New.id}}'>
-                            <div class='card-header text-light bg-dark'>
-                                <h3>{{New.title}}</h3>
-                                <small class='text-right'>Posted by {{user.username}} on {{format_date New.created_at}}</small>
-                            </div>
-                            <div class='card-body d-inline-block text-truncate' style='max-width: 100%' id='content' >{{New.content}}</div></a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        {{/each}}
-    {{/if}}
-</div>
-{{!-- --------------------------------------------------- --}}
-            <div class='container-fluid'>
-            <section>
-                <div class='d-flex flex-row-reverse col-12'>
-                    <button class='btn btn-secondary' id='btn-add'>+ Add New</button>
-                </div>
-            </section>
-            
-
-<script src='./js/dashboard.js'></script>  --}}
-
 <div class="row">
   <div class="col-auto">
-    <h1>Welcome, {{posts.user.username}}!</h1>
+    <h1 class="middle" >Welcome {{posts.[0].user.username}}!</h1>
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Blog Post:</h3>
 
-    <form class="form new-post-form">
-      <div class="form-group">
-        <label for="inputEmail4">Blog Post Name:</label>
-        <input class="form-control" type="text" id="post-title" placeholder="post name" />
-      </div>
-      <div class="form-group">
-        <label for="inputAddress">Share your thoughts:</label>
-        <input class="form-control" type="text" id="post-desc" placeholder="post content"></input>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
 
-<script src="/js/createBlog.js"></script>
+{{!-- ------------------- --}}
+   
+   <div class="posts">
+  {{#if posts}}
+    <h3 class="middle">Your Blog Posts:</h3>
+    {{#each posts}}
+<div class=" text-center">
+          <div class="card">
+          <div class="col-sm-4">
+            <div class="thumbnail">
+        <h4><a href="/dashboard/posts/{{id}}">{{title}}</a></h4>
+        <p>{{content}}</p>
+        <p>Created on: {{format_date date_created}}</p>
+      </div>
+    </div>
+</div>
+    {{/each}}
+</div>
+  {{/if}}  
+</div>
+ </div>
+    </div>
+
+<script src="/js/newPost.js"></script>

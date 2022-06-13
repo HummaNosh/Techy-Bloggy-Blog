@@ -1,0 +1,26 @@
+      <div class=" text-center">
+
+            <div class="thumbnail">
+        <h3>
+          {{title}}
+        </h2>
+        <h4>
+            {{content}}
+        </h4>
+         <p id="date">
+          Post by
+          {{user.username}}
+          on
+          {{format_date date_created}}
+        </p>
+  
+        <button class=" btn btn-sm btn-danger post-list" data-id="{{id}}">DELETE</button>
+       <br>
+       <br>
+       <button class="btn btn-sm btn-danger edit-link"> <a href="/dashboard/edit/{{id}}" id="edit">EDIT</a></button>
+ 
+      </div>
+       </div>
+ 
+
+    <script src="/js/edit.js"></script>

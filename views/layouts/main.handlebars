@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Techy Tech TECH</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link
     rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -32,12 +32,11 @@
           
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/dashboard">HOME</a></li>
+              <li><a href="/">HOME</a></li>
               <li><a href="/dashboard">DASHBOARD</a></li>
               
              {{!-- when you login 'create new blog should pop up --}}
               {{#if logged_in}}
-         <li><a href="/profile">MY PROFILE</a></li>
         <li><a href="/createBlog">CREATE A NEW BLOG!</a></li> 
         <li><a href="" id="logout">LOGOUT </a></li> 
         {{else}}
@@ -48,22 +47,28 @@
           </div>
         </div>
       </nav>
-    
-        <header>
-       <img id ="eye" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyeGCl88mSjlMXspn9n_QvsAAGMBUHBPyANw&usqp=CAU" alt = "An image of a technical eye"/>
-        </header>
-        <h1>
-           Your Techy Tech TECH Blog 
+    <br>
+    <br>
+    <br>
+
+               <h1>
+           👩‍💻 Your Techy Tech TECH Blog 👩‍💻
         </h1>
-        <main class="container container-fluid mt-5">
+        <div class = "centerit"></div>
+        <p class ="use">Girls/Guys,  use this space to talk about anything you want regarding TECH</p>
+</div>
+
           {{{ body }}}
 
-      </main>
       </body>   
-      <br>
-      <br>
-      <br>
-      
-<footer> Made by HUMMA </footer>
+
+
+    <div >
+       {{!-- <img id ="girlwithlaptop" src="/images/GirlsinTEch.jpg" alt = "An image of a a girl using a laptop"/> --}}
+
+      <footer class="footer"> Made by HUMMA </footer>
+      </div>
 <script src="js/logout.js"></script>
   </html>
+
+  
