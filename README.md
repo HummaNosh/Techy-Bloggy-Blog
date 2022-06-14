@@ -49,6 +49,7 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 https://obscure-shore-61246.herokuapp.com/
 
+
 ## Screenshots of the App
 
 #### Homepage
