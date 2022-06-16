@@ -89,6 +89,10 @@ button {
   display: flex;
   justify-content: center;
 }
+p{
+  font-style: italic;
+  font-size: small;
+}
 
 .footer {
   position: fixed;
